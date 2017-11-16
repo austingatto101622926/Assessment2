@@ -62,7 +62,9 @@ namespace Assignment2
 
                     break;
                 case 3://3. ADD ITEM TO CART
-
+                    Console.WriteLine("--DD ITEM TO CART--");
+                    Console.WriteLine("WHAT IS THE NAME OF YOUR ITEM:");
+                    string name = Console.ReadLine();
                     break;
                 default:
                     break;
