@@ -5,19 +5,16 @@ namespace Assignment2
 {
     class Program
     {
-        
+        static public bool Exit { get; set; } = false;
+
         static void Main(string[] args)
         {
-            bool exit = false;
-            Menu menu = new Menu();
-            Cart cart = new Cart();
-
             do
             {
-                int option = menu.PrompOptions();
-                menu.RunOption(option, cart);
+                int option = Menu.PrompOptions();
+                Menu.RunOption(option);
 
-            } while (!exit);
+            } while (!Exit);
         } 
     }
 }
