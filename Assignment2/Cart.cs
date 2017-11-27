@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace Assignment2
 {
-    static class Cart
+    public static class Cart
     {
         static public List<Item> Items { get; set; }  = new List<Item>();
         static public double Budget { get; set; } = 0;
@@ -41,6 +41,31 @@ namespace Assignment2
             else
             {
                 Console.WriteLine("YOU HAVE $" + (Budget-total) + " LEFT TO SPEND");
+            }
+        }
+
+        static public bool OverBudget()
+        {
+            double total = CalculateTotal();
+            if (total > Budget)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        static public bool OverBudget(double total, double budget)
+        {
+            if (total > Budget)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
     }

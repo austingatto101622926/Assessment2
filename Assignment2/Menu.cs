@@ -7,7 +7,7 @@ using Assignment2.Items.Food;
 
 namespace Assignment2
 {
-    static class Menu
+    public static class Menu
     {
         static public string[] MenuOptions { get; set; }
 
@@ -39,6 +39,11 @@ namespace Assignment2
                         Console.WriteLine("--THE BUDGET IS CURRENTLY: $"+ Cart.Budget+"--");
                     }
                     Console.WriteLine("--INPUT A BUDGET--");
+
+                    //UNIT TESTING PROOF OF CONCEPT, HARCODING INPUT
+                    //StringReader testInput = new StringReader("200");
+                    //Console.SetIn(testInput);
+
                     Cart.Budget = ReadValidPrice();
                     break;
 
@@ -138,7 +143,7 @@ namespace Assignment2
                     Console.ReadLine();
                     break;
 
-                case 4:
+                case 4: //Remove Item From Cart
 
                     if (Cart.Items.Count == 0)
                     {
@@ -152,7 +157,7 @@ namespace Assignment2
                     Console.WriteLine("--YOUR CART--");
                     Cart.WriteCart();
 
-                    Console.WriteLine("--SELECT AN ITEM TO REMOVE--");
+                    Console.WriteLine("\n--SELECT AN ITEM TO REMOVE--");
                     int index = ReadValidSelection(1,Cart.Items.Count)-1;
                     Cart.Items.RemoveAt(index);
 
@@ -180,7 +185,7 @@ namespace Assignment2
             return ReadValidSelection(1, MenuOptions.Length);
         }
 
-        static int ReadValidSelection(int min, int max)
+        public static int ReadValidSelection(int min, int max)
         {
             bool inputValid = false;
             int result = 0;
@@ -206,17 +211,19 @@ namespace Assignment2
             return result;
         }
 
-         static double ReadValidPrice()
+        public static double ReadValidPrice()
         {
             bool inputValid = false;
             double result = 0;
+            
 
             while (!inputValid)
             {
                 string input = Console.ReadLine();
+                
                 if (double.TryParse(input, out result))
                 {
-                    if (result > 0)
+                    if (result >= 0)
                     {
                         inputValid = true;
                     }
@@ -233,7 +240,7 @@ namespace Assignment2
             return result;
         }
 
-        static DateTime ReadValidDate()
+        public static DateTime ReadValidDate()
         {
             bool inputValid = false;
             DateTime result = new DateTime();
@@ -252,5 +259,6 @@ namespace Assignment2
             }
             return result;
         }
+        
     }
 }

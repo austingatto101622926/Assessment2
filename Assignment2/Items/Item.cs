@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Assignment2.Items
 {
-    class Item
+    public class Item
     {
         public string Name { get; set; }
         public double Price { get; set; }
