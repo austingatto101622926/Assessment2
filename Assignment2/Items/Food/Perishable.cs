@@ -15,7 +15,7 @@ namespace Assignment2.Items.Food
 
         public override string ToString()
         {
-            return base.ToString() + "\n  - PERISHABLE Expiry Date: " + ExpiryDate.ToString();
+            return base.ToString() + "\n  - PERISHABLE Expiry Date: " + ExpiryDate.ToString("yyyy-MM-dd");
         }
     }
 }

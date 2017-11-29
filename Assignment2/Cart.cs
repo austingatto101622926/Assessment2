@@ -34,7 +34,7 @@ namespace Assignment2
             {
                 Console.WriteLine("TOTAL: $" + total);
             }
-            else if (total > Budget)
+            else if (OverBudget())
             {
                 Console.WriteLine("YOU ARE $" + Math.Abs(Budget - total) + " OVER YOUR BUDGET");
             }
@@ -47,26 +47,12 @@ namespace Assignment2
         static public bool OverBudget()
         {
             double total = CalculateTotal();
-            if (total > Budget)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return (total > Budget);
         }
 
         static public bool OverBudget(double total, double budget)
         {
-            if (total > Budget)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return (total > budget);
         }
     }
 }

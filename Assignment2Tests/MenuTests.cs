@@ -25,13 +25,13 @@ namespace Assignment2Tests
 
             //Act
             min = 1;
-            max = 10;
-            input = "10";
+            max = 3;
+            input = " ";
 
             stringReader = new StringReader(input);
             Console.SetIn(stringReader);
 
-            expected = 10;
+            expected = 0;
             actual = Menu.ReadValidSelection(min, max);
 
             //Assert
@@ -51,12 +51,12 @@ namespace Assignment2Tests
             StringReader stringReader;
 
             //Act
-            input = "11";
+            input = "three";
 
             stringReader = new StringReader(input);
             Console.SetIn(stringReader);
 
-            expected = 11;
+            expected = 3;
             actual = Menu.ReadValidPrice();
 
             //Assert
@@ -76,12 +76,12 @@ namespace Assignment2Tests
             StringReader stringReader;
 
             //Act
-            input = "2017-09-14";
+            input = "2012/04/02";
 
             stringReader = new StringReader(input);
             Console.SetIn(stringReader);
 
-            expected = new DateTime(2017,09,14);
+            expected = new DateTime(2012,04,02);
             actual = Menu.ReadValidDate();
 
             //Assert

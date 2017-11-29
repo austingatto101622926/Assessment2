@@ -16,12 +16,10 @@ namespace Assignment2Tests
             double actual;
 
             //Act
-            Cart.Items.Add(new Item("a", 10));
-            Cart.Items.Add(new Item("b", 33));
-            Cart.Items.Add(new Item("c", 18));
-            Cart.Items.Add(new Item("d", 5));
+            Cart.Items.Add(new Item("a", 35.5));
+            Cart.Items.Add(new Item("b", 0.05));
 
-            expected = 10 + 33 + 18 + 5; //
+            expected = 35.55;
             actual = Cart.CalculateTotal();
 
             //Assert
@@ -40,10 +38,10 @@ namespace Assignment2Tests
             bool actual;
 
             //Act
-            total = 100;
-            budget = 20;
+            total = 99;
+            budget = 100;
 
-            expected = (total > budget);
+            expected = false;  // (total>budget);
             actual = Cart.OverBudget(total, budget);
 
             //Assert

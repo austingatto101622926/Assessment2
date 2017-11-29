@@ -165,7 +165,7 @@ namespace Assignment2
                     Console.ReadLine();
                     break;
 
-                case 5:
+                case 5://EXIT
                     Program.Exit = true;
                     break;
                 default:
